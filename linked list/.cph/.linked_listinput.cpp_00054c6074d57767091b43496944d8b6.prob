@@ -1,0 +1,1 @@
+{"name":"Local: linked_listinput","url":"d:\\phitron\\linked list\\linked_listinput.cpp","tests":[{"id":1734530595202,"input":"10 20 30 40 -1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\phitron\\linked list\\linked_listinput.cpp","group":"local","local":true}
