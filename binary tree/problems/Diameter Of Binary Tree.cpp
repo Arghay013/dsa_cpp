@@ -1,18 +1,18 @@
-// https://www.naukri.com/code360/problems/diameter-of-the-binary-tree_920552
+// https://leetcode.com/problems/diameter-of-binary-tree/
 
-int height(TreeNode<int> * root, int &maxDiameter) {
-    if (root == NULL) return 0;
-
-    int leftHeight = height(root->left, maxDiameter);
-    int rightHeight = height(root->right, maxDiameter);
-    maxDiameter = max(maxDiameter, leftHeight + rightHeight);
-
-    return 1 + max(leftHeight, rightHeight);
-}
-
-
-int diameterOfBinaryTree(TreeNode<int> *root){
-	int maxDiameter = 0;
-    height(root, maxDiameter);
-    return maxDiameter;
-}
+class Solution {
+public:
+    int mx=0;
+    int mx_h(TreeNode* root){
+        if(root == NULL)return 0;
+        if(root->left == NULL && root->right == NULL)return 1;
+        int l = mx_h(root->left);
+        int r = mx_h(root->right);
+        mx = max(mx, l+r);
+        return max(l,r)+1;
+    }
+    int diameterOfBinaryTree(TreeNode* root) {
+        int h = mx_h(root);
+        return mx;
+    }
+};
