@@ -16,7 +16,7 @@ void bfs(int src)
         int par = q.front();
         q.pop();
 
-        for(int child : adj_list[par])
+        for(auto child : adj_list[par])
         {
             if(!vis[child])
             {
